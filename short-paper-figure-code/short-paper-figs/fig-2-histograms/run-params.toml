@@ -1,0 +1,6 @@
+l = 40
+L = 2000
+tau_hf = 0.5
+tau_lf = 10
+mc_samples = 256000
+dyn_samples = 8000
