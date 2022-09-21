@@ -37,14 +37,14 @@ set label "$\\tau=0.5$" at 200,0.7
 #set ylabel "$S^z_j$"
 set label "$S_j^z$" rotate by 90 at graph 0 offset char -5, graph 0.5
 
-plot "../profile-mc-0.5/mc_profile.dat" u 1:(-$5) w l dt 3 lc 1 lw 2 title "Ensemble",\
-"../profile-mc-0.5/mc_profile.dat" u ($1-2000):(-$5) w l lc 1 lw 2 dt 3 title "",\
-"../dyn-big-0.5/dyn_profile-1000-tau.dat" u 1:5 w l lc 2 lw 2 title "$t=1000\\tau$",\
-"../dyn-big-0.5/dyn_profile-1000-tau.dat" u ($1-2000):5 w l lc 2 lw 2 title "",\
-"../dyn-big-0.5/dyn_profile-2000-tau.dat" u 1:5 w l lc 3 lw 2 title "$t=2000\\tau$",\
-"../dyn-big-0.5/dyn_profile-2000-tau.dat" u ($1-2000):5 w l lc 3 lw 2 title "",\
-"../dyn-big-0.5/dyn_profile-4000-tau.dat" u 1:5 w l lc 4 lw 2 title "$t=4000\\tau$",\
-"../dyn-big-0.5/dyn_profile-4000-tau.dat" u ($1-2000):5 w l lc 4 lw 2 title "",\
+plot "../profile-mc-fast/mc_profile.dat" u 1:(-$5) w l dt 3 lc 1 lw 2 title "Ensemble",\
+"../profile-mc-fast/mc_profile.dat" u ($1-2000):(-$5) w l lc 1 lw 2 dt 3 title "",\
+"../dyn-big-fast/dyn_profile-1000-tau.dat" u 1:5 w l lc 2 lw 2 title "$t=1000\\tau$",\
+"../dyn-big-fast/dyn_profile-1000-tau.dat" u ($1-2000):5 w l lc 2 lw 2 title "",\
+"../dyn-big-fast/dyn_profile-2000-tau.dat" u 1:5 w l lc 3 lw 2 title "$t=2000\\tau$",\
+"../dyn-big-fast/dyn_profile-2000-tau.dat" u ($1-2000):5 w l lc 3 lw 2 title "",\
+"../dyn-big-fast/dyn_profile-4000-tau.dat" u 1:5 w l lc 4 lw 2 title "$t=4000\\tau$",\
+"../dyn-big-fast/dyn_profile-4000-tau.dat" u ($1-2000):5 w l lc 4 lw 2 title "",\
 
 unset format x
 set lmargin 6.5
@@ -62,10 +62,10 @@ set label "$\\tau=10$" at 200,0.3
 
 #set for [i=0:1] arrow from (40*i), graph 0 to (40*i), graph 1 as 1
 
-plot "../dyn-big-10/dyn_profile-4000-tau.dat" u 1:5 w l lc 4 lw 2 title "$t=4000\\tau$",\
-"../dyn-big-10/dyn_profile-4000-tau.dat" u ($1-2000):5 w l lc 4 lw 2 title "",\
-"../dyn-big-10/dyn_profile-2000-tau.dat" u 1:5 w l lc 3 lw 2 title "$t=2000\\tau$",\
-"../dyn-big-10/dyn_profile-2000-tau.dat" u ($1-2000):5 w l lc 3 lw 2 title "",\
-"../dyn-big-10/dyn_profile-1000-tau.dat" u 1:5 w l lc 2 lw 2 title "$t=1000\\tau$",\
-"../dyn-big-10/dyn_profile-1000-tau.dat" u ($1-2000):5 w l lc 2 lw 2 title "",\
-"../profile-mc-10/mc_profile.dat" u 1:5 w l lc 1 lw 2 dt 3 title "Equilbrium ensemble $\\mathcal{P}_\\mathrm{rot}$", "../profile-mc-10/mc_profile.dat" u ($1-1000):5 w l lw 2 dt 3 lc 1 title "",\
+plot "../dyn-big-slow/dyn_profile-4000-tau.dat" u 1:5 w l lc 4 lw 2 title "$t=4000\\tau$",\
+"../dyn-big-slow/dyn_profile-4000-tau.dat" u ($1-2000):5 w l lc 4 lw 2 title "",\
+"../dyn-big-slow/dyn_profile-2000-tau.dat" u 1:5 w l lc 3 lw 2 title "$t=2000\\tau$",\
+"../dyn-big-slow/dyn_profile-2000-tau.dat" u ($1-2000):5 w l lc 3 lw 2 title "",\
+"../dyn-big-slow/dyn_profile-1000-tau.dat" u 1:5 w l lc 2 lw 2 title "$t=1000\\tau$",\
+"../dyn-big-slow/dyn_profile-1000-tau.dat" u ($1-2000):5 w l lc 2 lw 2 title "",\
+"../profile-mc-slow/mc_profile.dat" u 1:5 w l lc 1 lw 2 dt 3 title "Equilbrium ensemble $\\mathcal{P}_\\mathrm{rot}$", "../profile-mc-slow/mc_profile.dat" u ($1-1000):5 w l lw 2 dt 3 lc 1 title "",\
