@@ -106,7 +106,7 @@ def mc_slow(config):
     # Generate config
 
     om = 2 * pi / config["tau_slow"]
-    hfield = [1.0,0.0,0.0]
+    hfield = [1.0, 0.0, 0.0]
     hs = [0.0, 0.0, -om]
     conf = {
         "hsize": config["hsize"],
