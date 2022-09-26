@@ -116,7 +116,7 @@ if __name__ == "__main__":
     L = figure_config["L"]
 
     print(
-        "\x1b[0;32mGenerate data and plots for Fig. 2 (finite-size histograms for undriven system)\x1b[0m"
+        "\x1b[0;32mGenerate data and plots for Fig. 3 (histograms at high frequencies, compared with Floquet-Magnus results)\x1b[0m"
     )
     print(
         "1) Generate dynamics histogram \x1b[0;31mWILL OVERWRITE PREVIOUS DATA\x1b[0m"

@@ -18,39 +18,38 @@ def check_sc():
         )
 
 
-def run(config):
+def closed_run(config):
+    pass
+
+
+def open_run(config):
     check_sc()
 
+    os.chdir("open")
     # Read config
     with open("config.toml", "rb") as f:
         sc_config = tomli.load(f)
 
     sc_config["hsize"] = config["L"]
     sc_config["ssize"] = config["l"]
-    sc_config["tau"] = config["tau"]
-    sc_config["t"] = 200 * config["tau"]
 
     # Write new config
     with open("config.toml", "wb") as f:
         tomli_w.dump(sc_config, f)
 
-    os.system("sc")
-    os.system("sc -a")
-    os.system("rm log*.dat")
-    os.rename("avg.dat", "open-sync-avg.dat")
-
+    os.chdir("..")
     pass
 
 
 def plot(config):
     # Generate plot
-    os.system("gnuplot plot-sync-closed.gp")
-    os.system("pdflatex fig-7-sync-closed.tex")
-    os.remove("fig-7-sync-closed.aux")
-    os.remove("fig-7-sync-closed.log")
-    os.remove("fig-7-sync-closed.tex")
-    os.remove("fig-7-sync-closed-inc.eps")
-    os.remove("fig-7-sync-closed-inc-eps-converted-to.pdf")
+    os.system("gnuplot plot-dj-oc.gp")
+    os.system("pdflatex fig-5-heating-open-closed.tex")
+    os.remove("fig-5-heating-open-closed.aux")
+    os.remove("fig-5-heating-open-closed.log")
+    os.remove("fig-5-heating-open-closed.tex")
+    os.remove("fig-5-heating-open-closed-inc.eps")
+    os.remove("fig-5-heating-open-closed-inc-eps-converted-to.pdf")
     pass
 
 
@@ -62,14 +61,15 @@ if __name__ == "__main__":
     L = figure_config["L"]
 
     print(
-        "\x1b[0;32mGenerate data and plots for Fig. 7 (synchronisation in closed system)\x1b[0m"
+        "\x1b[0;32mGenerate data and plots for Fig. 5 (heating in open and closed systems)\x1b[0m"
     )
-    print("1) Generate data \x1b[0;31mWILL OVERWRITE PREVIOUS DATA\x1b[0m")
-    print("2) Produce plot (requires gnuplot and pdflatex)")
+    print("1) Generate closed curves \x1b[0;31mWILL OVERWRITE PREVIOUS DATA\x1b[0m")
+    print("2) Generate open curves \x1b[0;31mWILL OVERWRITE PREVIOUS DATA\x1b[0m")
+    print("3) Produce plots (requires gnuplot and pdflatex)")
 
     option = input()
 
-    switch = {"1": run, "2": plot}
+    switch = {"1": closed_run, "2": open_run, "3": plot}
     while option not in switch.keys():
         option = input("Invalid option, please try again: ")
 

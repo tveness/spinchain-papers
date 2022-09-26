@@ -62,7 +62,7 @@ if __name__ == "__main__":
     L = figure_config["L"]
 
     print(
-        "\x1b[0;32mGenerate data and plots for Fig. 2 (finite-size histograms for undriven system)\x1b[0m"
+        "\x1b[0;32mGenerate data and plots for Fig. 6 (synchronisation in open system)\x1b[0m"
     )
     print("1) Generate data \x1b[0;31mWILL OVERWRITE PREVIOUS DATA\x1b[0m")
     print("2) Produce plot (requires gnuplot and pdflatex)")
